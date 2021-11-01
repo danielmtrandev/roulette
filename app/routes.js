@@ -18,6 +18,8 @@ module.exports = function(app, passport, db) {
 			  })
 			})
 		});
+
+		
 	
 		app.put('/upVote', (req, res) => {
 			db.collection('messages')

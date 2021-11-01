@@ -1,7 +1,15 @@
 body{
   padding-top:80px;
   word-wrap:break-word;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20210831/pngtree-beautiful-maroon-casino-background-design-image_774361.jpg);
+  background-size: cover;
+  color: white;
 }
+
 img{
   height: 200px;
 }

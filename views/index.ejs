@@ -8,14 +8,36 @@
   </head>
   
   <body>
-    <input type="number" placeholder="message" name="msg" class="betAmount">
-    <input type="hidden" value="" placeholder="BetValue" name="bet" class="betValue">
-    <button type="submit" class="submitBtn">Submit</button>
-    <input type="button" value="red" class="betChoice">
-    <input type="button" value="black" class="betChoice">
-    <input type="button" value="green" class="betChoice">
-    <h2 id="result"></h2>
-    <a href = "/login"><button type ="button" name ="button">Login</button></a>
+    <div class="loginContainer">
+        <a href = "/login"><button type ="button" name ="button">Admin Login</button></a>
+    </div>
+
+    <h1>RESILIENT CASINO</h1>
+
+    <div class="inputContainer">
+      <input type="number" placeholder="YOUR BET AMOUNT" name="msg" class="betAmount">
+      <input type="hidden" value="" placeholder="BetValue" name="bet" class="betValue">
+      <input type="button" value="red" class="betChoice">
+      <input type="button" value="black" class="betChoice">
+      <input type="button" value="green" class="betChoice">
+    </div>
+
+    <div class="submitContainer">
+      <button type="submit" class="submitBtn">PLACE BET!</button>
+    </div>
+
+    <div class="resultContainer">
+      <h2 id="result"></h2>
+      <p id="betAmount"></p>
+      <p id="betChoice"></p>
+      <p id="random"></p>
+      <p id="winMessage"></p>
+      <p id="loseMessage"></p>
+      <p id="casinoRevenue"></p>
+    </div>
+
+    
+  
     <script src="main.js"></script>
   </body>
 </html>

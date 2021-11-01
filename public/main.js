@@ -1,5 +1,5 @@
 const bet = document.getElementsByClassName('betChoice');
-// console.log(bet)
+
 
 Array.from(bet).forEach(button => {
   button.addEventListener('click', setValue)
@@ -31,9 +31,12 @@ function runGame() {
   let amount = document.querySelector('.betAmount').value
   amount = Number(amount)
   console.log(typeof amount)
+  document.getElementById("betAmount").innerHTML = 'YOU BET: ' + '$' + amount;
+
 
   let betColor = document.querySelector('.betValue').value
   console.log(betColor)
+  document.getElementById("betChoice").innerHTML = 'YOU PICKED: ' + betColor;
   fetch('updateGame', {
     method: 'put',
     headers: {
@@ -50,7 +53,7 @@ function runGame() {
     if (response.ok) return response.json()
   })
   .then(data => {
-    console.log(data)
+    
   
   })
   let random = Math.ceil(Math.random() * 37)
@@ -59,21 +62,29 @@ function runGame() {
   if (random === 1 && betColor === 'green') {
     revenue -= amount * 35
     console.log('playerwinner!')
+    let playerWin = 'PLAYER WINS'
+    
 
   } else if (random >= 2 && random <= 19 && betColor === 'black') {
     revenue -= amount * 2
     console.log('playerwinner!')
+    let playerWin = 'PLAYER WINS'
 
   } else if (random > 19 && betColor === 'red') {
     revenue -= amount * 2
     console.log('playerwinner!')
+    
 
   } else {
     revenue += amount
     console.log('casino wins')
+    
   }
 
   console.log('random result',random)
+  document.getElementById("random").innerHTML = 'BALL LANDED ON: ' + random;
   console.log('casino revenue',revenue)
+  document.getElementById("casinoRevenue").innerHTML = 'CASINO REVENUE: ' + revenue;
 
+ 
 }
